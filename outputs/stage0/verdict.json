@@ -1,0 +1,10 @@
+{
+  "leak": true,
+  "ready_for_training": true,
+  "acoustic_shortcut": true,
+  "mean_auc": 0.5956126070991431,
+  "worst_auc": 0.41531517747858016,
+  "synthesizer_column": "synthesizer",
+  "notes": "Synthesizer column is 'synthesizer'. 6 LOSO folds, same af_common splits as the untrimmed check. Re-check trimmed leading and trailing frames with RMS below the silence threshold already chosen in the untrimmed search, 0.07713887808072614. No new trim threshold was searched. Fraction of samples removed: 0.3808. Untrimmed mean AUC 0.7166, worst 0.3533. Trimmed mean AUC 0.5956, worst fold A06 0.4153, std 0.1059, bootstrap CI [0.5138, 0.6662]. Shortcut threshold is 0.55. Univariate LOSO mean AUC on the trimmed signal: duration=0.5920, silence_ratio=0.5923, loudness=0.5833, sample_rate=0.5000. Best params: {\"silence_threshold\": 0.012384930898256409, \"C\": 0.0020004484210638853, \"class_weight\": \"none\", \"solver\": \"lbfgs\"}. Leading and trailing silence were not a removable pad: the cue remains inside the speech. data_manifest stays the original labeled protocol. Original audio under Data/ was not modified. The public test split was not used. ready_for_training is set only after this re-check.",
+  "data_manifest": "Data/train/targets.txt"
+}

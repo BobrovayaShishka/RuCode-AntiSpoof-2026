@@ -1,0 +1,824 @@
+{
+  "stage": 2,
+  "status": "complete",
+  "architecture": "lcnn",
+  "pretrained": false,
+  "best_params": {
+    "family": "lcnn",
+    "frontend": "lfcc",
+    "n_bins": 40,
+    "n_fft": 1024,
+    "hop": 512,
+    "lr": 0.0020925467114224455,
+    "weight_decay": 0.0005310044665511727,
+    "dropout": 0.4230032577549638,
+    "batch_size": 32,
+    "max_epochs": 10,
+    "lcnn_width": 64,
+    "resnet_width": 64
+  },
+  "search_bounds": {
+    "family": [
+      "lcnn",
+      "resnet18"
+    ],
+    "frontend": [
+      "logmel",
+      "lfcc"
+    ],
+    "n_bins": [
+      40,
+      80
+    ],
+    "n_fft": [
+      512,
+      1024
+    ],
+    "hop": [
+      256,
+      512
+    ],
+    "lcnn_width": [
+      16,
+      32,
+      64
+    ],
+    "resnet_width": [
+      32,
+      64
+    ],
+    "lr": [
+      0.0001,
+      0.003
+    ],
+    "weight_decay": [
+      1e-06,
+      0.01
+    ],
+    "dropout": [
+      0.0,
+      0.5
+    ],
+    "batch_size": [
+      8,
+      16,
+      32
+    ],
+    "max_epochs": [
+      4,
+      12
+    ],
+    "early_stop_patience": 3,
+    "oom_batch_size_floor": 4
+  },
+  "early_stop_patience": 3,
+  "seed_protocol": {
+    "optuna_seed": 0,
+    "final_seeds": [
+      0,
+      1,
+      2
+    ],
+    "n_optuna_trials": 20,
+    "full_loso": true,
+    "note": "Each Optuna trial uses SEEDS[0] and the full LOSO fold list shared with every other model. The trial budget is N_OPTUNA_TRIALS for this stage alone. After the best trial is chosen, that frozen config is retrained on every seed in SEEDS. The aggregate mean_auc is the mean of the per-seed mean_auc values, worst_auc is the worst of the per-seed worst_auc values, and std_auc plus the bootstrap CI come from summarize_fold_aucs on the three seed-level mean AUCs. No fold, trial, or seed is dropped. Early stopping uses EARLY_STOP_PATIENCE on the held-out fold AUC."
+  },
+  "optuna_best_value": 0.9915704814361485,
+  "trials": [
+    {
+      "number": 0,
+      "state": "COMPLETE",
+      "value": 0.8454141166870666,
+      "params": {
+        "family": "resnet18",
+        "frontend": "logmel",
+        "n_bins": 80,
+        "n_fft": 1024,
+        "hop": 256,
+        "lr": 0.0014773176334293555,
+        "weight_decay": 0.000130490735503624,
+        "dropout": 0.28402228054696615,
+        "batch_size": 8,
+        "max_epochs": 4,
+        "lcnn_width": 64,
+        "resnet_width": 32
+      },
+      "user_attrs": {
+        "effective_batch_size": 8,
+        "fold_aucs": {
+          "A01": 0.9997858017135863,
+          "A02": 0.9999938800489596,
+          "A03": 0.6819036107711138,
+          "A04": 0.9877080783353733,
+          "A05": 0.9372408200734395,
+          "A06": 0.46585250917992654
+        },
+        "worst_auc": 0.46585250917992654
+      }
+    },
+    {
+      "number": 1,
+      "state": "COMPLETE",
+      "value": 0.9387372501019992,
+      "params": {
+        "family": "resnet18",
+        "frontend": "lfcc",
+        "n_bins": 80,
+        "n_fft": 512,
+        "hop": 512,
+        "lr": 0.00047183412869566564,
+        "weight_decay": 0.00018781738757161942,
+        "dropout": 0.009394900218177571,
+        "batch_size": 8,
+        "max_epochs": 12,
+        "lcnn_width": 16,
+        "resnet_width": 32
+      },
+      "user_attrs": {
+        "effective_batch_size": 8,
+        "fold_aucs": {
+          "A01": 1.0,
+          "A02": 1.0,
+          "A03": 0.968328335373317,
+          "A04": 0.9999718482252142,
+          "A05": 0.9487475520195838,
+          "A06": 0.71537576499388
+        },
+        "worst_auc": 0.71537576499388
+      }
+    },
+    {
+      "number": 2,
+      "state": "COMPLETE",
+      "value": 0.866437933496532,
+      "params": {
+        "family": "resnet18",
+        "frontend": "logmel",
+        "n_bins": 80,
+        "n_fft": 512,
+        "hop": 256,
+        "lr": 0.00020348682523113558,
+        "weight_decay": 4.418125737902548e-06,
+        "dropout": 0.3265541627326992,
+        "batch_size": 16,
+        "max_epochs": 5,
+        "lcnn_width": 32,
+        "resnet_width": 64
+      },
+      "user_attrs": {
+        "effective_batch_size": 16,
+        "fold_aucs": {
+          "A01": 0.9999455324357405,
+          "A02": 1.0,
+          "A03": 0.8219944920440636,
+          "A04": 0.999578641370869,
+          "A05": 0.9239580783353734,
+          "A06": 0.45315085679314565
+        },
+        "worst_auc": 0.45315085679314565
+      }
+    },
+    {
+      "number": 3,
+      "state": "COMPLETE",
+      "value": 0.8570234598123214,
+      "params": {
+        "family": "lcnn",
+        "frontend": "logmel",
+        "n_bins": 40,
+        "n_fft": 512,
+        "hop": 256,
+        "lr": 0.000261661710093957,
+        "weight_decay": 3.025423979924893e-06,
+        "dropout": 0.14807009876107247,
+        "batch_size": 32,
+        "max_epochs": 4,
+        "lcnn_width": 16,
+        "resnet_width": 32
+      },
+      "user_attrs": {
+        "effective_batch_size": 32,
+        "fold_aucs": {
+          "A01": 0.9969033047735618,
+          "A02": 1.0,
+          "A03": 0.8922686658506732,
+          "A04": 0.8644085067319461,
+          "A05": 0.9166817625458996,
+          "A06": 0.47187851897184824
+        },
+        "worst_auc": 0.47187851897184824
+      }
+    },
+    {
+      "number": 4,
+      "state": "COMPLETE",
+      "value": 0.9716622297021624,
+      "params": {
+        "family": "resnet18",
+        "frontend": "lfcc",
+        "n_bins": 80,
+        "n_fft": 512,
+        "hop": 256,
+        "lr": 0.001676659739518327,
+        "weight_decay": 1.044195710380448e-06,
+        "dropout": 0.33890826839811505,
+        "batch_size": 32,
+        "max_epochs": 6,
+        "lcnn_width": 32,
+        "resnet_width": 64
+      },
+      "user_attrs": {
+        "effective_batch_size": 32,
+        "fold_aucs": {
+          "A01": 1.0,
+          "A02": 1.0,
+          "A03": 0.9561661566707467,
+          "A04": 0.9997888616891065,
+          "A05": 0.9806276009791922,
+          "A06": 0.893390758873929
+        },
+        "worst_auc": 0.893390758873929
+      }
+    },
+    {
+      "number": 5,
+      "state": "COMPLETE",
+      "value": 0.8138718890248878,
+      "params": {
+        "family": "resnet18",
+        "frontend": "logmel",
+        "n_bins": 40,
+        "n_fft": 512,
+        "hop": 256,
+        "lr": 0.0011783885441240178,
+        "weight_decay": 0.00010122727074488465,
+        "dropout": 0.47804181736161194,
+        "batch_size": 8,
+        "max_epochs": 4,
+        "lcnn_width": 32,
+        "resnet_width": 32
+      },
+      "user_attrs": {
+        "effective_batch_size": 8,
+        "fold_aucs": {
+          "A01": 0.9998935128518972,
+          "A02": 0.9994259485924113,
+          "A03": 0.47003365973072214,
+          "A04": 0.9904182986536108,
+          "A05": 0.9614819461444308,
+          "A06": 0.4619779681762546
+        },
+        "worst_auc": 0.4619779681762546
+      }
+    },
+    {
+      "number": 6,
+      "state": "COMPLETE",
+      "value": 0.9709190636474908,
+      "params": {
+        "family": "resnet18",
+        "frontend": "lfcc",
+        "n_bins": 80,
+        "n_fft": 512,
+        "hop": 256,
+        "lr": 0.00044037772676574875,
+        "weight_decay": 0.0036956720043405523,
+        "dropout": 0.4030969945230429,
+        "batch_size": 32,
+        "max_epochs": 10,
+        "lcnn_width": 16,
+        "resnet_width": 64
+      },
+      "user_attrs": {
+        "effective_batch_size": 32,
+        "fold_aucs": {
+          "A01": 1.0,
+          "A02": 1.0,
+          "A03": 0.9186985924112607,
+          "A04": 0.999968788249694,
+          "A05": 0.9812362301101591,
+          "A06": 0.925610771113831
+        },
+        "worst_auc": 0.9186985924112607
+      }
+    },
+    {
+      "number": 7,
+      "state": "COMPLETE",
+      "value": 0.8290114749082007,
+      "params": {
+        "family": "resnet18",
+        "frontend": "logmel",
+        "n_bins": 40,
+        "n_fft": 512,
+        "hop": 512,
+        "lr": 0.0027603461694471415,
+        "weight_decay": 0.0026498016706379504,
+        "dropout": 0.005857042092500986,
+        "batch_size": 16,
+        "max_epochs": 8,
+        "lcnn_width": 32,
+        "resnet_width": 32
+      },
+      "user_attrs": {
+        "effective_batch_size": 16,
+        "fold_aucs": {
+          "A01": 0.9995073439412485,
+          "A02": 0.999999388004896,
+          "A03": 0.5375354957160343,
+          "A04": 0.9977004283965728,
+          "A05": 0.9026539167686658,
+          "A06": 0.5366722766217871
+        },
+        "worst_auc": 0.5366722766217871
+      }
+    },
+    {
+      "number": 8,
+      "state": "COMPLETE",
+      "value": 0.8898666870665034,
+      "params": {
+        "family": "resnet18",
+        "frontend": "logmel",
+        "n_bins": 80,
+        "n_fft": 512,
+        "hop": 256,
+        "lr": 0.0006182933821259282,
+        "weight_decay": 0.00022889689707357626,
+        "dropout": 0.3650610147583848,
+        "batch_size": 16,
+        "max_epochs": 5,
+        "lcnn_width": 16,
+        "resnet_width": 64
+      },
+      "user_attrs": {
+        "effective_batch_size": 16,
+        "fold_aucs": {
+          "A01": 0.9993828029375765,
+          "A02": 0.9999951040391677,
+          "A03": 0.9055455936352509,
+          "A04": 0.9962322521419829,
+          "A05": 0.9601811505507956,
+          "A06": 0.4778632190942472
+        },
+        "worst_auc": 0.4778632190942472
+      }
+    },
+    {
+      "number": 9,
+      "state": "COMPLETE",
+      "value": 0.9826788555691556,
+      "params": {
+        "family": "resnet18",
+        "frontend": "lfcc",
+        "n_bins": 40,
+        "n_fft": 1024,
+        "hop": 256,
+        "lr": 0.0006202868261379978,
+        "weight_decay": 0.0038608699421558,
+        "dropout": 0.4951694736983522,
+        "batch_size": 16,
+        "max_epochs": 4,
+        "lcnn_width": 16,
+        "resnet_width": 64
+      },
+      "user_attrs": {
+        "effective_batch_size": 16,
+        "fold_aucs": {
+          "A01": 1.0,
+          "A02": 0.9998867809057528,
+          "A03": 0.9603956548347613,
+          "A04": 0.9996615667074663,
+          "A05": 0.9731294369645043,
+          "A06": 0.962999694002448
+        },
+        "worst_auc": 0.9603956548347613
+      }
+    },
+    {
+      "number": 10,
+      "state": "COMPLETE",
+      "value": 0.9823346593227255,
+      "params": {
+        "family": "lcnn",
+        "frontend": "lfcc",
+        "n_bins": 40,
+        "n_fft": 1024,
+        "hop": 512,
+        "lr": 0.00010655956170911712,
+        "weight_decay": 2.0697312396778617e-05,
+        "dropout": 0.1944088333309481,
+        "batch_size": 16,
+        "max_epochs": 8,
+        "lcnn_width": 64,
+        "resnet_width": 64
+      },
+      "user_attrs": {
+        "effective_batch_size": 16,
+        "fold_aucs": {
+          "A01": 1.0,
+          "A02": 0.9999706242350062,
+          "A03": 0.9868075275397796,
+          "A04": 0.9998696450428397,
+          "A05": 0.9976086291309669,
+          "A06": 0.9097515299877601
+        },
+        "worst_auc": 0.9097515299877601
+      }
+    },
+    {
+      "number": 11,
+      "state": "COMPLETE",
+      "value": 0.9802360261117911,
+      "params": {
+        "family": "lcnn",
+        "frontend": "lfcc",
+        "n_bins": 40,
+        "n_fft": 1024,
+        "hop": 512,
+        "lr": 0.00010192182552899265,
+        "weight_decay": 2.3002792604012717e-05,
+        "dropout": 0.18739219677133426,
+        "batch_size": 16,
+        "max_epochs": 8,
+        "lcnn_width": 64,
+        "resnet_width": 64
+      },
+      "user_attrs": {
+        "effective_batch_size": 16,
+        "fold_aucs": {
+          "A01": 1.0,
+          "A02": 0.999532129742962,
+          "A03": 0.9849280905752754,
+          "A04": 0.9998001835985312,
+          "A05": 0.9973228274173807,
+          "A06": 0.8998329253365973
+        },
+        "worst_auc": 0.8998329253365973
+      }
+    },
+    {
+      "number": 12,
+      "state": "COMPLETE",
+      "value": 0.9830406976744186,
+      "params": {
+        "family": "lcnn",
+        "frontend": "lfcc",
+        "n_bins": 40,
+        "n_fft": 1024,
+        "hop": 512,
+        "lr": 0.00011119229380650799,
+        "weight_decay": 0.0010693218680212023,
+        "dropout": 0.4928645350949216,
+        "batch_size": 16,
+        "max_epochs": 7,
+        "lcnn_width": 64,
+        "resnet_width": 64
+      },
+      "user_attrs": {
+        "effective_batch_size": 16,
+        "fold_aucs": {
+          "A01": 1.0,
+          "A02": 0.9991799265605875,
+          "A03": 0.9912432680538555,
+          "A04": 0.9996845165238678,
+          "A05": 0.9975052019583843,
+          "A06": 0.9106312729498164
+        },
+        "worst_auc": 0.9106312729498164
+      }
+    },
+    {
+      "number": 13,
+      "state": "COMPLETE",
+      "value": 0.9822881986944104,
+      "params": {
+        "family": "lcnn",
+        "frontend": "lfcc",
+        "n_bins": 40,
+        "n_fft": 1024,
+        "hop": 512,
+        "lr": 0.00018284780752336464,
+        "weight_decay": 0.009014527377880626,
+        "dropout": 0.4958565020792128,
+        "batch_size": 16,
+        "max_epochs": 7,
+        "lcnn_width": 64,
+        "resnet_width": 64
+      },
+      "user_attrs": {
+        "effective_batch_size": 16,
+        "fold_aucs": {
+          "A01": 1.0,
+          "A02": 0.9990896572827417,
+          "A03": 0.9910636474908201,
+          "A04": 0.9997420440636475,
+          "A05": 0.9968996328029376,
+          "A06": 0.9069342105263158
+        },
+        "worst_auc": 0.9069342105263158
+      }
+    },
+    {
+      "number": 14,
+      "state": "COMPLETE",
+      "value": 0.9908244594043247,
+      "params": {
+        "family": "lcnn",
+        "frontend": "lfcc",
+        "n_bins": 40,
+        "n_fft": 1024,
+        "hop": 512,
+        "lr": 0.0008129437539284736,
+        "weight_decay": 0.0010646626616296736,
+        "dropout": 0.42659992104437405,
+        "batch_size": 16,
+        "max_epochs": 11,
+        "lcnn_width": 64,
+        "resnet_width": 64
+      },
+      "user_attrs": {
+        "effective_batch_size": 16,
+        "fold_aucs": {
+          "A01": 1.0,
+          "A02": 0.9999244186046512,
+          "A03": 0.9928962668298653,
+          "A04": 0.9995281517747858,
+          "A05": 0.9968723990208078,
+          "A06": 0.9557255201958385
+        },
+        "worst_auc": 0.9557255201958385
+      }
+    },
+    {
+      "number": 15,
+      "state": "COMPLETE",
+      "value": 0.9911194920440636,
+      "params": {
+        "family": "lcnn",
+        "frontend": "lfcc",
+        "n_bins": 40,
+        "n_fft": 1024,
+        "hop": 512,
+        "lr": 0.0008849052322037091,
+        "weight_decay": 0.0008156861242825912,
+        "dropout": 0.4284367739882398,
+        "batch_size": 16,
+        "max_epochs": 12,
+        "lcnn_width": 64,
+        "resnet_width": 64
+      },
+      "user_attrs": {
+        "effective_batch_size": 16,
+        "fold_aucs": {
+          "A01": 1.0,
+          "A02": 0.9990550795593636,
+          "A03": 0.9935361077111383,
+          "A04": 0.9995642594859241,
+          "A05": 0.9944666462668299,
+          "A06": 0.960094859241126
+        },
+        "worst_auc": 0.960094859241126
+      }
+    },
+    {
+      "number": 16,
+      "state": "COMPLETE",
+      "value": 0.9908517951856385,
+      "params": {
+        "family": "lcnn",
+        "frontend": "lfcc",
+        "n_bins": 40,
+        "n_fft": 1024,
+        "hop": 512,
+        "lr": 0.0009865350856240085,
+        "weight_decay": 0.0006573644284463723,
+        "dropout": 0.41994471569718334,
+        "batch_size": 16,
+        "max_epochs": 12,
+        "lcnn_width": 64,
+        "resnet_width": 64
+      },
+      "user_attrs": {
+        "effective_batch_size": 16,
+        "fold_aucs": {
+          "A01": 1.0,
+          "A02": 1.0,
+          "A03": 0.9962444920440636,
+          "A04": 0.999047429620563,
+          "A05": 0.9944981640146879,
+          "A06": 0.9553206854345165
+        },
+        "worst_auc": 0.9553206854345165
+      }
+    },
+    {
+      "number": 17,
+      "state": "COMPLETE",
+      "value": 0.9903841799265606,
+      "params": {
+        "family": "lcnn",
+        "frontend": "lfcc",
+        "n_bins": 40,
+        "n_fft": 1024,
+        "hop": 512,
+        "lr": 0.0009695465522949583,
+        "weight_decay": 0.0005681039640708923,
+        "dropout": 0.2702622255810395,
+        "batch_size": 16,
+        "max_epochs": 12,
+        "lcnn_width": 64,
+        "resnet_width": 64
+      },
+      "user_attrs": {
+        "effective_batch_size": 16,
+        "fold_aucs": {
+          "A01": 1.0,
+          "A02": 0.9985021419828641,
+          "A03": 0.9957129742962056,
+          "A04": 0.9996025091799265,
+          "A05": 0.9945807833537331,
+          "A06": 0.953906670746634
+        },
+        "worst_auc": 0.953906670746634
+      }
+    },
+    {
+      "number": 18,
+      "state": "COMPLETE",
+      "value": 0.9915704814361485,
+      "params": {
+        "family": "lcnn",
+        "frontend": "lfcc",
+        "n_bins": 40,
+        "n_fft": 1024,
+        "hop": 512,
+        "lr": 0.0020925467114224455,
+        "weight_decay": 0.0005310044665511727,
+        "dropout": 0.4230032577549638,
+        "batch_size": 32,
+        "max_epochs": 10,
+        "lcnn_width": 64,
+        "resnet_width": 64
+      },
+      "user_attrs": {
+        "effective_batch_size": 32,
+        "fold_aucs": {
+          "A01": 1.0,
+          "A02": 0.9995495716034272,
+          "A03": 0.998405446756426,
+          "A04": 0.9997258261933905,
+          "A05": 0.9856759485924113,
+          "A06": 0.9660660954712362
+        },
+        "worst_auc": 0.9660660954712362
+      }
+    },
+    {
+      "number": 19,
+      "state": "COMPLETE",
+      "value": 0.9909044267645859,
+      "params": {
+        "family": "lcnn",
+        "frontend": "lfcc",
+        "n_bins": 40,
+        "n_fft": 1024,
+        "hop": 512,
+        "lr": 0.0027405628906974843,
+        "weight_decay": 2.7135537886255932e-05,
+        "dropout": 0.38463231662899233,
+        "batch_size": 32,
+        "max_epochs": 10,
+        "lcnn_width": 64,
+        "resnet_width": 64
+      },
+      "user_attrs": {
+        "effective_batch_size": 32,
+        "fold_aucs": {
+          "A01": 1.0,
+          "A02": 0.999906364749082,
+          "A03": 0.9963855569155446,
+          "A04": 0.9993962668298654,
+          "A05": 0.9904605263157895,
+          "A06": 0.9592778457772337
+        },
+        "worst_auc": 0.9592778457772337
+      }
+    }
+  ],
+  "per_seed": {
+    "0": {
+      "mean_auc": 0.9915704814361485,
+      "worst_auc": 0.9660660954712362,
+      "std_auc": 0.013661392923474973,
+      "ci_low": 0.9806457058343533,
+      "ci_high": 0.9995384026927785,
+      "fold_aucs": {
+        "A01": 1.0,
+        "A02": 0.9995495716034272,
+        "A03": 0.998405446756426,
+        "A04": 0.9997258261933905,
+        "A05": 0.9856759485924113,
+        "A06": 0.9660660954712362
+      }
+    },
+    "1": {
+      "mean_auc": 0.9846860465116279,
+      "worst_auc": 0.92081211750306,
+      "std_auc": 0.031413491549949484,
+      "ci_low": 0.9591812525499797,
+      "ci_high": 0.9989265478376174,
+      "fold_aucs": {
+        "A01": 1.0,
+        "A02": 0.9999296205630355,
+        "A03": 0.9947233782129743,
+        "A04": 0.9991156670746634,
+        "A05": 0.9935354957160343,
+        "A06": 0.92081211750306
+      }
+    },
+    "2": {
+      "mean_auc": 0.9920799673602612,
+      "worst_auc": 0.960984088127295,
+      "std_auc": 0.015306288394566502,
+      "ci_low": 0.9796206892594859,
+      "ci_high": 0.9991274492554062,
+      "fold_aucs": {
+        "A01": 0.9999957160342717,
+        "A02": 0.9999742962056304,
+        "A03": 0.9965982252141983,
+        "A04": 0.998203488372093,
+        "A05": 0.9967239902080783,
+        "A06": 0.960984088127295
+      }
+    }
+  },
+  "aggregate": {
+    "mean_auc": 0.9894454984360125,
+    "worst_auc": 0.9492874337005305,
+    "std_auc": 0.01990202775067736,
+    "ci_low": 0.9733055674554603,
+    "ci_high": 0.9991444189446486,
+    "fold_aucs": {
+      "A01": 0.9999985720114238,
+      "A02": 0.9998178294573643,
+      "A03": 0.996575683394533,
+      "A04": 0.9990149938800489,
+      "A05": 0.9919784781721747,
+      "A06": 0.9492874337005305
+    },
+    "seed_mean_aucs": {
+      "0": 0.9915704814361485,
+      "1": 0.9846860465116279,
+      "2": 0.9920799673602612
+    },
+    "note": "Each fold AUC is the arithmetic mean across seeds. mean_auc, worst_auc, std_auc, ci_low, and ci_high are summarize_fold_aucs on that fold map. worst_auc is the worst seed-averaged fold, not the minimum of the per-seed worsts. mean_auc equals the mean of the per-seed mean AUCs. std and the bootstrap interval are over folds."
+  },
+  "kept_vs_stage1": true,
+  "stage1_metrics_present": true,
+  "features_excluded": [
+    "duration",
+    "silence_ratio",
+    "loudness",
+    "sample_rate"
+  ],
+  "family_fit": {
+    "lcnn": {
+      "fits": true,
+      "max_batch": 32
+    },
+    "resnet18": {
+      "fits": true,
+      "max_batch": 32
+    }
+  },
+  "oom": {
+    "cap": 32,
+    "events": []
+  },
+  "cudnn": {
+    "configured": true,
+    "deterministic": true,
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+  },
+  "n_folds": 6,
+  "fold_ids": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05",
+    "A06"
+  ],
+  "data_manifest": "Data/train/targets.txt",
+  "table_source": "C:\\Users\\kitty\\PycharmProjects\\anti-fake\\Data\\train\\targets.txt",
+  "n_rows": 25380,
+  "ready_for_training": true,
+  "verdict_leak": true,
+  "python": "C:\\Users\\kitty\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+  "limitations": [
+    "Shortcut scalars (duration, silence ratio, loudness, sample rate) are not model inputs.",
+    "Submissions were not written; later SSL stages may still be the accepted model.",
+    "Audio source: ablation_cache."
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "code_version": 1,
+  "protocol": {
+    "n_trials": 20,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "min_mean_auc_gain": 0.005,
+    "strong_mean_auc_gain": 0.01,
+    "folds": "loso-synthesizer",
+    "decision_source": "loso_only",
+    "optuna_seed": 0,
+    "early_stop_patience": 3,
+    "final_fit_epochs": 10,
+    "final_fit_early_stopping": false,
+    "aggregation": "af_common.mean_fold_aucs + summarize_fold_aucs",
+    "trial_budget_note": "Each new arm that introduces hyperparameters receives exactly N_OPTUNA_TRIALS. Arms inside one stage share that budget; a more complex arm does not receive more trials. The reference arm is the frozen previous winner and is not re-tuned. Optuna trials use the first protocol seed and every LOSO fold. The chosen trial is then refit on every seed in SEEDS. BCE has no new loss knobs, so it is the frozen reference rather than twenty identical trials."
+  },
+  "baseline": {
+    "name": "lcnn64_lfcc_mean_bce",
+    "source": "prior winner, test 97.65 not used for selection",
+    "hparams": {
+      "pooling": "mean",
+      "loss": "bce",
+      "frontend": "lfcc",
+      "lcnn_width": 64,
+      "n_bins": 40,
+      "n_fft": 1024,
+      "hop": 512,
+      "lr": 0.0020925467114224455,
+      "weight_decay": 0.0005310044665511727,
+      "dropout": 0.4230032577549638,
+      "batch_size": 32,
+      "max_epochs": 10,
+      "optimizer": "adamw",
+      "rawboost": null,
+      "codec": null
+    },
+    "metrics": {
+      "mean_auc": 0.9894454984360125,
+      "worst_fold": 0.9492874337005305,
+      "worst_auc": 0.9492874337005305,
+      "std": 0.01990202775067736,
+      "std_auc": 0.01990202775067736,
+      "ci_low": 0.9733055674554603,
+      "ci_high": 0.9991444189446486,
+      "worst_fold_id": "A06",
+      "seed_mean_aucs": {
+        "0": 0.9915704814361485,
+        "1": 0.9846860465116279,
+        "2": 0.9920799673602612
+      },
+      "source": "outputs/stage2/metrics.json aggregate"
+    }
+  },
+  "current_winner": {
+    "name": "lcnn64_lfcc_mean_bce",
+    "stage": "baseline",
+    "source": "prior winner, test 97.65 not used for selection",
+    "hparams": {
+      "pooling": "mean",
+      "loss": "bce",
+      "frontend": "lfcc",
+      "lcnn_width": 64,
+      "n_bins": 40,
+      "n_fft": 1024,
+      "hop": 512,
+      "lr": 0.0020925467114224455,
+      "weight_decay": 0.0005310044665511727,
+      "dropout": 0.4230032577549638,
+      "batch_size": 32,
+      "max_epochs": 10,
+      "optimizer": "adamw",
+      "rawboost": null,
+      "codec": null
+    },
+    "metrics": {
+      "mean_auc": 0.9894454984360125,
+      "worst_fold": 0.9492874337005305,
+      "worst_auc": 0.9492874337005305,
+      "std": 0.01990202775067736,
+      "std_auc": 0.01990202775067736,
+      "ci_low": 0.9733055674554603,
+      "ci_high": 0.9991444189446486,
+      "worst_fold_id": "A06",
+      "seed_mean_aucs": {
+        "0": 0.9915704814361485,
+        "1": 0.9846860465116279,
+        "2": 0.9920799673602612
+      },
+      "source": "outputs/stage2/metrics.json aggregate"
+    }
+  },
+  "stages": {}
+}

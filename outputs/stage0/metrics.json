@@ -1,0 +1,333 @@
+{
+  "mean_auc": 0.5956126070991431,
+  "worst_auc": 0.41531517747858016,
+  "std_auc": 0.10586365313551396,
+  "ci_low": 0.513758667380661,
+  "ci_high": 0.6661627371481028,
+  "fold_aucs": {
+    "A01": 0.5430960832313342,
+    "A02": 0.6529430844553243,
+    "A03": 0.711047123623011,
+    "A04": 0.6599559363525092,
+    "A05": 0.5913182374541004,
+    "A06": 0.41531517747858016
+  },
+  "per_seed": {
+    "0": {
+      "A01": 0.5430960832313342,
+      "A02": 0.6529430844553243,
+      "A03": 0.711047123623011,
+      "A04": 0.6599559363525092,
+      "A05": 0.5913182374541004,
+      "A06": 0.41531517747858016
+    },
+    "1": {
+      "A01": 0.5430960832313342,
+      "A02": 0.6529430844553243,
+      "A03": 0.711047123623011,
+      "A04": 0.6599559363525092,
+      "A05": 0.5913182374541004,
+      "A06": 0.41531517747858016
+    },
+    "2": {
+      "A01": 0.5430960832313342,
+      "A02": 0.6529430844553243,
+      "A03": 0.711047123623011,
+      "A04": 0.6599559363525092,
+      "A05": 0.5913182374541004,
+      "A06": 0.41531517747858016
+    }
+  },
+  "best_params": {
+    "silence_threshold": 0.012384930898256409,
+    "C": 0.0020004484210638853,
+    "class_weight": "none",
+    "solver": "lbfgs"
+  },
+  "feature_mean_auc": {
+    "duration": 0.5920215728274174,
+    "silence_ratio": 0.5922558139534884,
+    "loudness": 0.5833084455324358,
+    "sample_rate": 0.5
+  },
+  "trials": [
+    {
+      "number": 0,
+      "value": 0.5791167890656874,
+      "params": {
+        "silence_threshold": 0.004430375245218269,
+        "C": 3.7665768415992953,
+        "class_weight": "balanced",
+        "solver": "liblinear"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 1,
+      "value": 0.5853482252141983,
+      "params": {
+        "silence_threshold": 0.002054762512591136,
+        "C": 28.765041432546976,
+        "class_weight": "balanced",
+        "solver": "lbfgs"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 2,
+      "value": 0.5768556711546308,
+      "params": {
+        "silence_threshold": 0.005059803874660437,
+        "C": 42.460313017682125,
+        "class_weight": "none",
+        "solver": "liblinear"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 3,
+      "value": 0.5752302121583027,
+      "params": {
+        "silence_threshold": 0.021600820741402058,
+        "C": 22.390342721683698,
+        "class_weight": "balanced",
+        "solver": "liblinear"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 4,
+      "value": 0.5699950020399837,
+      "params": {
+        "silence_threshold": 0.00022637229697395497,
+        "C": 1.583452742782974,
+        "class_weight": "none",
+        "solver": "lbfgs"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 5,
+      "value": 0.5793263973888209,
+      "params": {
+        "silence_threshold": 0.0006218230782016858,
+        "C": 7.433073841273531,
+        "class_weight": "none",
+        "solver": "liblinear"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 6,
+      "value": 0.5783565891472867,
+      "params": {
+        "silence_threshold": 0.006859416411328701,
+        "C": 1.215262185250935,
+        "class_weight": "balanced",
+        "solver": "liblinear"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 7,
+      "value": 0.5956126070991431,
+      "params": {
+        "silence_threshold": 0.012384930898256409,
+        "C": 0.0020004484210638853,
+        "class_weight": "none",
+        "solver": "lbfgs"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 8,
+      "value": 0.5838274173806609,
+      "params": {
+        "silence_threshold": 0.0008836597074694361,
+        "C": 0.06584970818505352,
+        "class_weight": "balanced",
+        "solver": "lbfgs"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 9,
+      "value": 0.5755817013463892,
+      "params": {
+        "silence_threshold": 0.00042328245586201223,
+        "C": 0.00640541967480273,
+        "class_weight": "balanced",
+        "solver": "lbfgs"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 10,
+      "value": 0.5693565891472868,
+      "params": {
+        "silence_threshold": 0.036835348410439755,
+        "C": 0.0025478183077442353,
+        "class_weight": "none",
+        "solver": "lbfgs"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 11,
+      "value": 0.5611289269685843,
+      "params": {
+        "silence_threshold": 0.037214695748068315,
+        "C": 0.12516993665197595,
+        "class_weight": "none",
+        "solver": "lbfgs"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 12,
+      "value": 0.5799880660954713,
+      "params": {
+        "silence_threshold": 0.004019720876491193,
+        "C": 0.008811675227398464,
+        "class_weight": "none",
+        "solver": "lbfgs"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 13,
+      "value": 0.5856528967768259,
+      "params": {
+        "silence_threshold": 0.002259045612506817,
+        "C": 39.77703835257689,
+        "class_weight": "balanced",
+        "solver": "lbfgs"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 14,
+      "value": 0.5796731946144431,
+      "params": {
+        "silence_threshold": 0.007900226423780625,
+        "C": 1.2873356372355493,
+        "class_weight": "none",
+        "solver": "lbfgs"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 15,
+      "value": 0.5662544879640963,
+      "params": {
+        "silence_threshold": 0.041866979513022366,
+        "C": 0.46478391050545437,
+        "class_weight": "balanced",
+        "solver": "liblinear"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 16,
+      "value": 0.5709410444716443,
+      "params": {
+        "silence_threshold": 0.025429656203599264,
+        "C": 66.00866387452248,
+        "class_weight": "none",
+        "solver": "lbfgs"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 17,
+      "value": 0.5850807833537331,
+      "params": {
+        "silence_threshold": 0.013621941236345417,
+        "C": 0.2678205114932692,
+        "class_weight": "balanced",
+        "solver": "lbfgs"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 18,
+      "value": 0.5798529171766625,
+      "params": {
+        "silence_threshold": 0.007994607987345886,
+        "C": 12.008362827599825,
+        "class_weight": "none",
+        "solver": "lbfgs"
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 19,
+      "value": 0.5825392696858426,
+      "params": {
+        "silence_threshold": 0.0679190227619037,
+        "C": 4.90081903098978,
+        "class_weight": "none",
+        "solver": "lbfgs"
+      },
+      "state": "COMPLETE"
+    }
+  ],
+  "n_folds": 6,
+  "synthesizer_column": "synthesizer",
+  "trim_threshold": 0.07713887808072614,
+  "trim_cache": "outputs/stage0/trimmed",
+  "removed_sample_fraction": 0.3808316622251364,
+  "untrimmed": {
+    "mean_auc": 0.7165985312117503,
+    "worst_auc": 0.35332680538555694,
+    "std_auc": 0.2042538857932589,
+    "ci_low": 0.5521001631986944,
+    "ci_high": 0.84075,
+    "fold_aucs": {
+      "A01": 0.9051389228886167,
+      "A02": 0.7098053855569155,
+      "A03": 0.8679559363525092,
+      "A04": 0.8256878824969401,
+      "A05": 0.35332680538555694,
+      "A06": 0.6376762545899632
+    },
+    "per_seed": {
+      "0": {
+        "A01": 0.9051389228886169,
+        "A02": 0.7098053855569155,
+        "A03": 0.8679559363525092,
+        "A04": 0.82568788249694,
+        "A05": 0.35332680538555694,
+        "A06": 0.6376762545899632
+      },
+      "1": {
+        "A01": 0.9051389228886169,
+        "A02": 0.7098053855569155,
+        "A03": 0.8679559363525092,
+        "A04": 0.82568788249694,
+        "A05": 0.35332680538555694,
+        "A06": 0.6376762545899632
+      },
+      "2": {
+        "A01": 0.9051389228886169,
+        "A02": 0.7098053855569155,
+        "A03": 0.8679559363525092,
+        "A04": 0.82568788249694,
+        "A05": 0.35332680538555694,
+        "A06": 0.6376762545899632
+      }
+    },
+    "best_params": {
+      "silence_threshold": 0.07713887808072614,
+      "C": 5.778964358472895,
+      "class_weight": "balanced",
+      "solver": "lbfgs"
+    },
+    "feature_mean_auc": {
+      "duration": 0.419452519379845,
+      "silence_ratio": 0.6746373419012648,
+      "loudness": 0.4233767849857201,
+      "sample_rate": 0.5
+    }
+  }
+}

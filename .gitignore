@@ -1,0 +1,28 @@
+# Локальные артефакты: аудио ASVspoof и веса в репозиторий не кладём
+Data/
+.venv/
+checkpoints/
+colab_data.zip
+colab_code.zip
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Чекпоинты вне каталога checkpoints/
+*.pth
+*.pt
+*.ckpt
+# Финальные веса LCNN: stage2.submit --from-checkpoints собирает CSV сдачи из них
+!outputs/stage2/final_checkpoints/*.pt
+
+# Кэши аудио и признаков; metrics.json, decisions.json и файлы сдачи оставляем
+outputs/**/trimmed/
+outputs/**/*.wav
+outputs/**/*.npz
+outputs/**/*.npy
+outputs/**/feat_cache/
+outputs/stage4/cache/
+outputs/gpu.lock
+.ruff_cache/

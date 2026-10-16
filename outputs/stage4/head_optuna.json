@@ -1,0 +1,15 @@
+{
+  "fingerprint": "5064164db4420e77a960497026412e3291605c656cb9fac666d79fc7ec1ee855",
+  "checkpoint": "facebook/wav2vec2-xls-r-300m",
+  "layer": 1,
+  "best_params": {
+    "lr": 0.028707051470170886,
+    "weight_decay": 0.0012482451581373585,
+    "epochs": 27,
+    "batch_size": 256,
+    "pos_weight": 0.055639850723710624
+  },
+  "best_value": 0.9832417380660955,
+  "search_seed": 0,
+  "n_trials": 20
+}

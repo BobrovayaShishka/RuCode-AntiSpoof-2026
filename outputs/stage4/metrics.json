@@ -1,0 +1,110 @@
+{
+  "stage": 4,
+  "manifest": "Data/train/targets.txt",
+  "leak": true,
+  "acoustic_shortcut": true,
+  "ready_for_training": true,
+  "checkpoint": "facebook/wav2vec2-xls-r-300m",
+  "layer": 1,
+  "best_params": {
+    "lr": 0.028707051470170886,
+    "weight_decay": 0.0012482451581373585,
+    "epochs": 27,
+    "batch_size": 256,
+    "pos_weight": 0.055639850723710624
+  },
+  "mean_auc": 0.9824208146334831,
+  "worst_auc": 0.8955907792737658,
+  "std_auc": 0.042539394940532146,
+  "ci_low": 0.947639908880729,
+  "ci_high": 0.999975080749354,
+  "fold_aucs": {
+    "A01": 1.0,
+    "A02": 1.0,
+    "A03": 0.9998969808241535,
+    "A04": 0.9999700122399021,
+    "A05": 0.9990671154630762,
+    "A06": 0.8955907792737658
+  },
+  "per_seed": {
+    "0": {
+      "mean_auc": 0.9832417380660955,
+      "worst_auc": 0.9004724602203182,
+      "std_auc": 0.04054985859299805,
+      "ci_low": 0.950092513259894,
+      "ci_high": 0.9999694996940024,
+      "fold_aucs": {
+        "A01": 1.0,
+        "A02": 1.0,
+        "A03": 0.9998769889840882,
+        "A04": 0.9999632802937577,
+        "A05": 0.9991376988984089,
+        "A06": 0.9004724602203182
+      }
+    },
+    "1": {
+      "mean_auc": 0.9827924316605466,
+      "worst_auc": 0.8978984088127295,
+      "std_auc": 0.04159125811529851,
+      "ci_low": 0.9487810077519381,
+      "ci_high": 0.9999775601795186,
+      "fold_aucs": {
+        "A01": 1.0,
+        "A02": 1.0,
+        "A03": 0.9998892288861689,
+        "A04": 0.9999761321909425,
+        "A05": 0.9989908200734394,
+        "A06": 0.8978984088127295
+      }
+    },
+    "2": {
+      "mean_auc": 0.9812282741738066,
+      "worst_auc": 0.8884014687882497,
+      "std_auc": 0.04547709798123975,
+      "ci_low": 0.944046205630355,
+      "ci_high": 0.9999777845777233,
+      "fold_aucs": {
+        "A01": 1.0,
+        "A02": 1.0,
+        "A03": 0.9999247246022032,
+        "A04": 0.9999706242350062,
+        "A05": 0.9990728274173807,
+        "A06": 0.8884014687882497
+      }
+    }
+  },
+  "seed_mean_aucs": [
+    0.9832417380660955,
+    0.9827924316605466,
+    0.9812282741738066
+  ],
+  "seed_std_of_mean_auc": 0.0010569217674409456,
+  "probe_chosen": {
+    "checkpoint": "facebook/wav2vec2-xls-r-300m",
+    "layer": 1,
+    "mean_auc": 0.9965571195430437,
+    "worst_auc": 0.979515299877601,
+    "std_auc": 0.008348851750267016,
+    "ci_low": 0.9897420440636475,
+    "ci_high": 0.9999859266625866,
+    "reason": "highest mean AUC, then worst fold, then simpler model, then earlier layer"
+  },
+  "vram_fallback": {
+    "microsoft/wavlm-base": null,
+    "facebook/wav2vec2-xls-r-300m": null
+  },
+  "stage2": {
+    "mean_auc": 0.9894454984360125,
+    "worst_auc": 0.9492874337005305
+  },
+  "stage3": {
+    "mean_auc": 0.770407061743506,
+    "worst_auc": 0.48978182374541
+  },
+  "reference_stage": "stage2",
+  "reference_mean_auc": 0.9894454984360125,
+  "reference_worst_auc": 0.9492874337005305,
+  "kept_vs_neural": false,
+  "submission_paths": null,
+  "submission_skipped_reason": "kept_vs_neural is false"
+}
